@@ -1,0 +1,20 @@
+# permissions for end users to view mydbdbaasinstances.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mydbdbaasinstance-viewer-role
+rules:
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances/status
+  verbs:
+  - get

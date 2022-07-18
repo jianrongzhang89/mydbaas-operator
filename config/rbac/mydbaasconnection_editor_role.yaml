@@ -1,0 +1,24 @@
+# permissions for end users to edit mydbdbaasconnections.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mydbdbaasconnection-editor-role
+rules:
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasconnections
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasconnections/status
+  verbs:
+  - get

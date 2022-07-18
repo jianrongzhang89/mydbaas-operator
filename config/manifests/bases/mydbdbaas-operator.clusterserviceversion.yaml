@@ -1,0 +1,55 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: mydbdbaas-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: MydbDBaaSConnection is the Schema for the mydbdbaasconnections
+        API
+      displayName: My DBaaS Connection
+      kind: MydbDBaaSConnection
+      name: mydbdbaasconnections.dbaas.redhat.com
+      version: v1alpha1
+    - description: MydbDBaaSInstance is the Schema for the mydbdbaasinstances API
+      displayName: My DBaaS Instance
+      kind: MydbDBaaSInstance
+      name: mydbdbaasinstances.dbaas.redhat.com
+      version: v1alpha1
+    - description: MydbDBaaSInventory is the Schema for the mydbdbaasinventories API
+      displayName: My DBaaS Inventory
+      kind: MydbDBaaSInventory
+      name: mydbdbaasinventories.dbaas.redhat.com
+      version: v1alpha1
+  description: MyDBaaSOperator
+  displayName: My DBaaS Operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - DBaaS
+  links:
+  - name: Mydbdbaas Operator
+    url: https://mydbdbaas-operator.domain
+  maturity: alpha
+  provider:
+    name: My DB
+  version: 0.0.0

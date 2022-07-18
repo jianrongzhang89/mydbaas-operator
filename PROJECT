@@ -1,0 +1,37 @@
+domain: redhat.com
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: mydbdbaas-operator
+repo: github.com/RHEcosystemAppEng/mydbdbaas-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: redhat.com
+  group: dbaas
+  kind: MydbDBaaSInstance
+  path: github.com/RHEcosystemAppEng/mydbdbaas-operator/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: redhat.com
+  group: dbaas
+  kind: MydbDBaaSInventory
+  path: github.com/RHEcosystemAppEng/mydbdbaas-operator/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: redhat.com
+  group: dbaas
+  kind: MydbDBaaSConnection
+  path: github.com/RHEcosystemAppEng/mydbdbaas-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"

@@ -1,0 +1,123 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - dbaasproviders
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - dbaasproviders/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - dbaasproviders/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasconnections
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasconnections/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasconnections/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinventories
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinventories/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinventories/status
+  verbs:
+  - get
+  - patch
+  - update

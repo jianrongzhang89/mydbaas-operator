@@ -1,0 +1,24 @@
+# permissions for end users to edit mydbdbaasinstances.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mydbdbaasinstance-editor-role
+rules:
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - dbaas.redhat.com
+  resources:
+  - mydbdbaasinstances/status
+  verbs:
+  - get
